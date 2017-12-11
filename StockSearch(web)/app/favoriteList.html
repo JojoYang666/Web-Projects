@@ -1,0 +1,101 @@
+<div class="panel panel-default">
+  <div class="panel-heading" id="flex-container">
+    <h5  class="flex-item">Favorite List</h5>
+    <div class="raw-item">
+          <span id="idShow">Automatic Refresh:</span> <toggle ng-model="toggleValue" ng-change="changed()"  ng-click="autoFresh()"></toggle>
+          
+          <button type="button" class="btn btn-default" ng-click="RefreshOnce()"><span class="glyphicon glyphicon-refresh" aria-hidden="true">
+          </button>
+
+          <a href="#chartTable" ng-click="drawAgain($event)"><button type="button" class="btn btn-default" ng-disabled="ifAnotherPage"><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></button></a>
+    </div>
+  			
+	</div>
+  <div class="panel-body">
+   	
+			
+		
+		<div class="row">
+				<div class="col-sm-1"><b>Sort by</b></div>
+				<div class="col-sm-3">
+					<select class="form-control" ng-model="selectedName" ng-change="myFunc()">
+						<option value="Default" ng-selected="true">Default</option>
+						<option value="Symbol" selected="selected">Symbol</option>
+						<option value="Price">Price</option>
+						<option value="Change">Change</option>
+						<option value="Change Percent">Change Percent</option>
+						<option value="Volume">Volume</option>
+					</select>
+				</div>
+
+				<div class="col-sm-1"><b>Order</b></div>
+				<div class="col-sm-3">
+					<select class="form-control" ng-model="SecondselectedName" ng-change="myFunc()" ng-disabled="ifDisabled">
+						<option value="Ascending" ng-selected="true">Ascending</option>
+						<option value="Descending">Descending</option>
+					</select>
+					
+  				</div>
+		</div>
+
+
+    <div  class="table-responsive" class="col-md-10" style="border: none;">
+      <table  class="table table-striped" ng-init="firstTable=true" ng-show="firstTable" style="margin-top: 15px;">
+        
+          <tr>
+            
+            <td><b>Symbol</b></td>
+            <td><b>Stock Price</b></td>
+            <td><b>Change (Change Percent)</b></td>
+            <td><b>Volume</b></td>
+            <td></td>
+          </tr>
+
+          <tr ng-repeat="itemLove in loveStock">
+            <td><a href="#chartTable" ng-click="getData(itemLove.symbol)">{{itemLove.symbol}}<a></td>
+            <td>{{itemLove.price}}</td>
+            <td ng-style="styleChnangeLove(itemLove)">{{itemLove.change}} <img width="15px" height="15px" ng-src={{imgChangeLove(itemLove)}}></td>
+            <td>{{itemLove.volume}}</td>
+            <td><button type="button" class="btn btn-default btn-xs" ng-click="deleteLove(itemLove.symbol)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+          </tr>
+
+      </table>
+
+      <table class="table table-striped" ng-init="secondTable=false" ng-show="secondTable">
+        
+          <tr>
+            <td><b>Symbol</b></td>
+            <td><b>Stock Price</b></td>
+            <td><b>Change (Change Percent)</b></td>
+            <td><b>Volume</b></td>
+            <td></td>
+          </tr>
+
+          <tr ng-repeat="itemLove in loveStock | orderBy:sortWay">
+            <td><a href="#chartTable" ng-click="getData(itemLove.symbol)">{{itemLove.symbol}}<a></td>
+            <td>{{itemLove.price}}</td>
+            <td ng-style="styleChnangeLove(itemLove)">{{itemLove.change}} <img width="15px" height="15px" ng-src="{{imgChangeLove(itemLove)}}"></td>
+            <td>{{itemLove.volume}}</td>
+            <td><button type="button" class="btn btn-default btn-xs" ng-click="deleteLove(itemLove.symbol)"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button></td>
+          </tr>
+          
+      </table>
+
+    </div>
+
+			
+
+  </div>
+</div>
+
+
+
+<!-- <script>
+		  $(function() {
+		    $('#toggle-one').bootstrapToggle();
+		  })
+</script> -->
+<!-- <toggle ng-model="toggleValue" ng-change="changed()"></toggle> -->
+
+
+

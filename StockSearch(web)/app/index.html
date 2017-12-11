@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/main.css"> -->
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+  <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="libs/angular-bootstrap-toggle.min.css">
+  <link rel="stylesheet" type="text/css" href="css/animation.css">  
+   <link rel="stylesheet" type="text/css" href="favoris.css">                
+	<style type="text/css">
+		body{
+		
+		background-image: url("http://cs-server.usc.edu:45678/hw/hw8/images/background.png");
+	}
+
+
+	#favoriteList{ 
+	 /* padding-left: 15px;
+	  padding-right: 15px;
+	  padding-top: 15px;*/
+	  padding: 15px 15px 25px 15px;
+	  background-color: white;
+	  border-radius: 8px;
+	  overflow: hidden;
+	  /*overflow:auto;*/
+
+	}
+
+	#topStle{
+	  margin-top: 5px;
+	  padding-bottom: 25px;
+	   /*margin-bottom: 15px;*/
+	  background-color: white;
+	  border-radius: 8px;
+	}
+
+	body{
+		height: 150%
+	background-image: url("http://cs-server.usc.edu:45678/hw/hw8/images/background.png");
+}
+
+	
+
+	
+
+</style>
+	<script src="libs/moment.js"></script>
+	<!-- <script src="libs/moment-timezone.min.js"></script> -->
+	<script src="libs/moment-timezone-with-data.js"></script>
+    <script type="text/javascript" src="libs/jquery/jquery.js"></script>
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+  	
+  	<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+    
+    <script type="text/javascript" src="libs/angular-bootstrap-toggle.min.js"></script>
+
+	
+	<script src="https://code.highcharts.com/stock/highstock.js"></script>
+	<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+	<title></title>
+</head>
+
+<body ng-app="ngViewExample" ng-controller="MainCtrl" ng-class="animation" style="height: 150%">
+<div id="topStle" class="col-md-10 col-md-offset-1">
+	<form name="autocompleteForm">
+		<h4 align="center">Stock Market Search</h4>
+		<div class="row">
+				<div class="form-group">
+					<div class="col-md-3">
+						<label for="symbolSearch" style="margin-top: 4px;">Enter Stock Ticker Symbol:<span style="vertical-align: middle; color: red">*</span></label>
+					</div>
+					<div ng-controller="autoCom" class="col-md-6" >
+
+						<!-- ng-controller="autoCom" -->
+						<md-autocomplete id="symbolSearchh" md-input-name="autocompleteField" ng-keypress="clickFunction()" md-selected-item="selectedItem" md-search-text="searchText" md-items="item in query(searchText)" md-selected-item-change="selectValue(selectedItem)" md-item-text="item.symbol" md-no-cache="false" md-clear-button="false" md-input-id="symbolSearch" placeholder='e.g. AAPL'>
+						  <md-item-template>
+						    <span md-highlight-text="searchText">{{item.display}}</span>
+						  </md-item-template>
+
+						 
+			            <!-- <div ng-message="md-require-match">Please select an existing state.</div>
+			            <div ng-message="minlength">Your entry is not long enough.</div>
+			            <div ng-message="maxlength">Your entry is too long.</div> -->
+			          
+						</md-autocomplete>
+						<div id='try'>{{autocompleteForm.autocompleteField.$modelValue}}</div>
+						<div id="errorInput">Please enter a stock ticker symbol</div>
+						</div>
+						
+					</div>	
+			
+					<div class="col-md-3" style="margin-top: -13px">
+						
+						<button ng-click="getData()" type="submit" class="btn btn-primary" disabled="true" id="searchButton">
+							<span class="glyphicon glyphicon-search" aria-hidden="true"></span>Get Quote</button>
+							
+						<a href="#back" ng-click=clear()> <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span> Clear</button></a>
+						
+						
+					</div>			
+			</div>
+			
+			
+	</form>
+</div>
+
+
+
+
+<div class="col-md-10 col-md-offset-1">
+	<hr>
+</div>
+
+
+<div id="favoriteList" class="col-md-10 col-md-offset-1">
+	
+		<div ng-view class="view">
+		
+		
+	</div>
+  <!-- <input type="checkbox" checked data-toggle="toggle" id="test"> -->
+</div>
+
+
+
+
+
+
+
+<!-- <script src="//connect.facebook.net/en_US/all.js"></script> -->
+<script src="js/app.js"></script>
+<!-- <script src="js/auto.js"></script> -->
+<script src="js/Price.js"></script>
+<!-- <script src="js/singLine.js"></script> -->
+<script src="js/stoch.js"></script>
+<script src="js/BBANDS.js"></script>
+<script src="js/MACD.js"></script>
+<script src="js/ADX.js"></script>
+<script src="js/CCI.js"></script>
+<script src="js/RSI.js"></script>
+<script src="js/EMA.js"></script>
+<script src="js/SMA.js"></script>
+
+<!-- <script src="js/fb.js"></script> -->
+<script src="js/stockChart.js"></script>
+<script type="text/javascript">
+	$('#errorInput').hide();
+	$('#try').hide();
+		
+	$("#searchButton").click(function(){
+		if($("#searchButton").prop('disabled'))
+		{
+		$('#errorInput').show();
+	  	$('#symbolSearchh').css('border',"2px solid red");
+		}
+	});
+
+
+	$( "#symbolSearchh" ).keyup(function() {
+		
+		var temp=$.trim($('#try').text());
+		console.log(temp);
+	  	if(temp.length==0){
+	  	$('#errorInput').show();
+	  	$('#symbolSearchh').css('border',"2px solid red");
+	  	$('#searchButton').prop('disabled',true);
+	  }
+	  else{
+	  	$('#searchButton').prop('disabled',false);
+	  	$('#errorInput').hide();
+	  	$('#symbolSearchh').css('border',"none");
+	  }
+	});
+
+
+	$( "#symbolSearchh" ).blur(function() {
+		console.log("I am here");
+	  if($('#try').text().length==0)
+	  {
+	  	$('#errorInput').show();
+	  	$('#symbolSearchh').css('border',"2px solid red");
+	  	$('#searchButton').prop('disabled',true);
+	  }
+	});
+
+	// $("#symbolSearchh").click(function(){
+	// 	console.log("listen click");
+	// 	console.log($('#try').text());
+	// 	$('#errorInput').hide();
+	// 	$('#symbolSearch').css('border',"none");
+	// 	$('#searchButton').prop('disabled',false);
+	// });
+
+		
+
+
+</script>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '754593754725766',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+	
+
+
+
+
+</body>
+</html>

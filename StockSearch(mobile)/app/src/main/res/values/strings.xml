@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">stockSearch</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="tab_text_1">CURRENT</string>
+    <string name="tab_text_2">HISTORICAL</string>
+    <string name="tab_text_3">NEWS</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="facebook_app_id">151425618943517</string>
+    <string name="fb_login_protocol_scheme">fb151425618943517</string>
+    <string name="preference_file_key">favorite</string>
+    <string name="if_delete">Remove from Favorites?</string>
+
+    
+    <string-array name="indicator_names">
+        <item>Price</item>
+        <item>SMA</item>
+        <item>EMA</item>
+        <item>MACD</item>
+        <item>RSI</item>
+        <item>ADX</item>
+        <item>CCI</item>
+    </string-array>
+    
+    <string-array name="sort">
+        <item>Sort by</item>
+        <item>Default</item>
+        <item>Symbol</item>
+        <item>Price</item>
+        <item>Change</item>
+    </string-array>
+
+    <string-array name="order">
+        <item>Order</item>
+        <item>Ascending</item>
+        <item>Descending</item>
+    </string-array>
+
+    <string-array name="delete_item">
+        <item>NO</item>
+        <item>Yes</item>
+    </string-array>
+
+</resources>

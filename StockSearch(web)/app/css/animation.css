@@ -1,0 +1,96 @@
+
+
+
+/*.view.ng-enter {
+  animation: slidein 3s linear;
+  
+  -webkit-animation: my_fade_animation 0.5s linear;
+}
+
+@keyframes slidein {
+  from { transform: translateX(0%); }
+  to { transform: translateX(100%); }
+}
+*/
+
+
+/*.view.ng-enter {
+  animation: my_fade_animation 0.5s linear;
+  -webkit-animation: my_fade_animation 0.5s linear;
+}
+
+@keyframes my_fade_animation {
+  from { transform:translateX(100%); }
+  to { transform: translateX(0%); }
+}
+
+@-webkit-keyframes my_fade_animation {
+  from {transform:translateX(100%); }
+  to { transform: translateX(0%); }
+}
+*/
+
+
+
+.first .view.ng-enter {
+  animation: my_fade_animation 0.5s linear;
+  -webkit-animation: my_fade_animation 0.5s linear;
+}
+
+@keyframes my_fade_animation {
+  from { transform:translateX(100%); }
+  to { transform: translateX(0%); }
+}
+
+@-webkit-keyframes my_fade_animation {
+  from {transform:translateX(100%); }
+  to { transform: translateX(0%); }
+}
+
+
+.second .view.ng-enter {
+  animation: seconAni 0.5s linear;
+  -webkit-animation: seconAni 0.5s linear;
+}
+
+@keyframes seconAni {
+  from { transform:translateX(-100%); }
+  to { transform: translateX(0%); }
+}
+
+@-webkit-keyframes seconAni {
+  from {transform:translateX(-100%); }
+  to { transform: translateX(0%); }
+}
+
+
+
+
+/*.view.ng-enter {
+  opacity: 1;
+  animation: slidein 0.5s linear;
+  -webkit-animation: my_fade_animation 0.5s linear;
+}*/
+
+
+
+/*@-webkit-keyframes my_fade_animation {
+  from { transform: scaleX(0);   }
+  to { transform: scaleX(1);}
+}*/
+
+
+
+/*.view.ng-enter, .view.ng-leave,
+.record.ng-anchor {
+  transition:0.5s linear all;
+}
+.view.ng-enter {
+  transform:translateX(100%);
+}
+.view.ng-enter.ng-enter-active, .view.ng-leave {
+  transform:translateX(0%);
+}
+.view.ng-leave.ng-leave-active {
+  transform:translateX(-100%);
+}

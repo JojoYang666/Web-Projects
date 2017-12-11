@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "devDependencies": {
+    "clipboard": "^1.5.16",
+    "formBuilder": "^2.5.0",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "minimatch": "^3.0.4"
+  },
+  "dependencies": {
+    "laravel-elixir": "^4.0.0",
+    "bootstrap-sass": "^3.0.0",
+    "clipboard": "~1.5.16"
+  }
+}

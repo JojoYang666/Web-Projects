@@ -1,0 +1,10 @@
+/vendor
+/node_modules
+/public/storage
+/public/node_modules
+Homestead.yaml
+Homestead.json
+.env
+.env_meizu
+.env_qcloud
+.idea

@@ -1,0 +1,26 @@
+#flex-container {
+  display: flex;
+  flex-direction: row;
+  background-color: red;
+}
+
+#flex-container > .flex-item {
+  flex: auto;
+}
+
+#flex-container > .raw-item {
+  width: 5rem;
+}
+#flex-container {
+  width: 100%;
+  font-family: Consolas, Arial, sans-serif;
+}
+
+#flex-container > div {
+  border: 1px solid #f00;
+  padding: 1rem;
+}
+
+#flex-container > .raw-item {
+  border: 1px solid #000;
+}

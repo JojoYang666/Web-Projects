@@ -1,0 +1,53 @@
+#flex-container {
+  display: flex;
+  justify-content:space-between; 
+  /*background-color: red;*/
+}
+
+
+.stockHeader {
+   display: flex;
+  justify-content:space-between; 
+  
+ 
+}
+
+#stockHeader {
+   display: flex;
+  justify-content:space-between; 
+  
+ 
+}
+
+#noneUse{
+	visibility: hidden;
+}
+
+
+
+
+/*#secHeader{
+	float: center;
+}*/
+
+@media (max-width: 736px) 
+{
+    #idShow,#secondFulll
+    {
+        display: none;
+    }
+    
+}
+
+@media (min-width: 737px) {
+#secondHeader
+    {
+        display:none;
+
+    }
+}
+
+
+
+
+}

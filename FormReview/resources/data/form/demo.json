@@ -1,0 +1,55 @@
+{
+  "name": "demo",
+  "title": "示例",
+  "description": "这是一个示例",
+  "creator": "lin",
+  "createTime": 111111111,
+  "updateTime": 111111111,
+  "isPublish": true,
+  "isDelete": false,
+  "inWechat": false,
+  "filterBlacklist": true,
+  "reviewTimes": 3,
+  "fields": [
+    {
+      "name": "username",
+      "type": "input",
+      "placeholder": "请输入您的姓名",
+      "label": "姓名",
+      "helpText": "Supporting help text",
+      "isMulti": false,
+      "validate": "required"
+    },
+    {
+      "name": "password",
+      "type": "password",
+      "placeholder": "请输入您的密码",
+      "value": "",
+      "extra": "",
+      "label": "密码",
+      "helpText": "Supporting help text",
+      "validate": "required",
+      "isMulti": false
+    },
+    {
+      "name": "file",
+      "type": "upload",
+      "label": "文件",
+      "helpText": "Supporting help text",
+      "validate": "required",
+      "isMulti": false
+    },
+    {
+      "name": "sex",
+      "type": "radio",
+      "options": {
+        "1": "man",
+        "2": "woman"
+      },
+      "label": "文件",
+      "helpText": "Supporting help text",
+      "validate": "required",
+      "isMulti": false
+    }
+  ]
+}
